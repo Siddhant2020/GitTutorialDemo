@@ -1,0 +1,8 @@
+To change the content of a certain field in the page header and in the details sections based on an input parameter, create a Crystal Formula:
+
+create your parameter;
+create a formula, in the form if {? parameter name } = ' true value ' then { value1 } else { value2 }
+insert your formula into the page header and details sections of your report where you want to see the parameterised content field.
+Share
+Improve this answer
+Follow

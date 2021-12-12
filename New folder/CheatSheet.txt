@@ -1,0 +1,20 @@
+touch .gitignore
+git config --global user.name "your_name"
+git config --global user.email "your_email@example.com"
+git init
+git add .
+git commit -m "initial commit"
+git status #Just to see
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+tail <path to id-rsa.pub> # add  this key to your GitHub acc.
+git remote add origin <ssh url.git>
+git push origin master
+
+
+git diff # compares the staging area with working directory
+git diff --staged # compares the last commit with current staging area
+
+git commit -a -m "Direct Commit" # cmd to direct commit without staging the file (check)
+
+git branch [branch-name] # to create branch
+git checkout -b [branch-name] #to create and checkout the branch

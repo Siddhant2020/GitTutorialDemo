@@ -1,0 +1,28 @@
+using System;
+
+using System.Runtime.InteropServices;
+using System.Diagnostics;
+
+[DllImport("user32.dll")]
+static extern bool SetForegroundWindow(IntPtr hWnd);
+
+[DllImport("user32.dll")]
+[return: MarshalAs(UnmanagedType.Bool)]
+static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
+[DllImport("user32.dll", EntryPoint = "FindWindow")]
+public static extern IntPtr FindWindowByCaption(IntPtr ZeroOnly, string lpWindowName);
+
+private static void ActivateApp(string processName)
+{
+    Process[] p = Process.GetProcessesByName(processName);
+
+    if (p.Length > 0)
+    {
+        IntPtr handle = FindWindowByCaption(IntPtr.Zero, p[0].ProcessName);
+        ShowWindow(handle, 9); // SW_RESTORE = 9,
+        SetForegroundWindow(handle);
+    }
+} 
+
+ActivateApp(YOUR_APP_NAME);

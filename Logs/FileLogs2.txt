@@ -1,0 +1,5 @@
+right-click on the field you want to hide/unhide and select Format Field... from the menu;
+select the Common tab in the Format Editor;
+click on the x-2 button to the right of where it says Suppress - this brings up the Formula Editor for the Suppression condition (the check box to the left of where it says Suppress will unconditionally suppress the field);
+enter the condition to hide the field - eg. if your parameter is called HideField and you want to hide the field if the parameter has the value 'Y', then enter {?HideField} = 'Y'
+click the Save and close button in the Formula Editor, and then click OK in the Format Editor.
